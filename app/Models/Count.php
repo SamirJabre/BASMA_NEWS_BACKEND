@@ -10,7 +10,8 @@ class Count extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'category_dd',
+        'category_id',
+        'count',
     ];
 
     public function user()
