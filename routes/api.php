@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AggregateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -22,3 +23,11 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::post('/count_visits', [CountVisitController::class, 'countCategoryClick']);
+
+Route::controller(AggregateController::class)->group(function () {
+    Route::post('increment_nav_clicks', 'increment_Nav');
+    Route::post('increment_hero_clicks', 'increment_hero');
+    Route::post('increment_news_clicks', 'increment_News');
+    Route::post('increment_most_read_clicks', 'increment_Most_read');
+    Route::post('increment_footer_clicks', 'increment_Footer');
+});
