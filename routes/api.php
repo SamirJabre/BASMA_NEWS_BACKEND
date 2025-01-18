@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CountVisitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,5 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'register');
     Route::post('logout', 'logout');
 });
+
+Route::post('/count_visits', [CountVisitController::class, 'countCategoryClick']);
