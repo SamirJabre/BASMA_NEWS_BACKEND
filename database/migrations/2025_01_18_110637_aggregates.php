@@ -18,11 +18,11 @@ return new class extends Migration
             $table->integer('news_categories_clicks');
             $table->integer('most_read_clicks');
             $table->integer('footer_clicks');
-            $table->integer('unique-navigation_clicks');
-            $table->integer('unique-hero_section_clicks');
-            $table->integer('unique-news_categories_clicks');
-            $table->integer('unique-most_read_clicks');
-            $table->integer('unique-footer_clicks');
+            $table->integer('unique_navigation_clicks');
+            $table->integer('unique_hero_section_clicks');
+            $table->integer('unique_news_categories_clicks');
+            $table->integer('unique_most_read_clicks');
+            $table->integer('unique_footer_clicks');
             $table->timestamps();
         });
     }
