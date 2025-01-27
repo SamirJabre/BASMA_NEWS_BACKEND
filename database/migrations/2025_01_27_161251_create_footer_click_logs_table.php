@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('click_logs', function (Blueprint $table) {
+        Schema::create('footer_click_logs', function (Blueprint $table) {
             $table->id();
-            $table->string('ip_address')->unique();
             $table->timestamps();
         });
     }
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('click_logs');
+        Schema::dropIfExists('footer_click_logs');
     }
 };

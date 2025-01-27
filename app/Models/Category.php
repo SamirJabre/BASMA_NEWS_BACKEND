@@ -14,4 +14,8 @@ class Category extends Model
         'body',
         'image',
     ];
+    public function clicks()
+    {
+        return $this->hasMany(ClickLog::class, 'category_id');
+    }
 }

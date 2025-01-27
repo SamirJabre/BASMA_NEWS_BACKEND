@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ClickLog extends Model
 {
     use HasFactory;
-    protected $fillable = ['section', 'ip_address'];
+    protected $fillable = [
+        'ip_address',
+    ];
 }
