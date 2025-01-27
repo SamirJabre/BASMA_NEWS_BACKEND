@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class AggregateController extends Controller
 {
-    public function increment_Nav(){
+    public function incrementNav(){
         $section = Aggregate::find(1);
         if ($section) {
             $section->navigation_clicks += 1;
@@ -20,7 +20,7 @@ class AggregateController extends Controller
             return response()->json(['message' => 'Section not found.'], 404);
         }
     }
-    public function increment_hero(){
+    public function incrementHero(){
         $section = Aggregate::find(1);
         if ($section) {
             $section->hero_section_clicks += 1;
@@ -30,7 +30,7 @@ class AggregateController extends Controller
             return response()->json(['message' => 'Section not found.'], 404);
         }
     }
-    public function increment_News(){
+    public function incrementNews(){
         $section = Aggregate::find(1);
         if ($section) {
             $section->news_categories_clicks += 1;
@@ -40,7 +40,7 @@ class AggregateController extends Controller
             return response()->json(['message' => 'Section not found.'], 404);
         }
     }
-    public function increment_Most_read(){
+    public function incrementMostRead(){
         $section = Aggregate::find(1);
         if ($section) {
             $section->most_read_clicks += 1;
@@ -50,7 +50,7 @@ class AggregateController extends Controller
             return response()->json(['message' => 'Section not found.'], 404);
         }
     }
-    public function increment_Footer(){
+    public function incrementFooter(){
         $section = Aggregate::find(1);
         if ($section) {
             $section->footer_clicks += 1;
@@ -61,7 +61,7 @@ class AggregateController extends Controller
         }
     }
 
-    public function increment_unique_navigation_clicks(Request $request)
+    public function incrementUniqueNavigationClicks(Request $request)
     {
         $ipAddress = $request->ip();
         $existingLog = ClickLog::where('ip_address', $ipAddress)->first();
@@ -80,7 +80,7 @@ class AggregateController extends Controller
         }
     }
 
-    public function increment_unique_hero_section_clicks(Request $request)
+    public function incrementUniqueHeroSectionClicks(Request $request)
     {
         $ipAddress = $request->ip();
         $existingLog = ClickLog::where('ip_address', $ipAddress)->first();
@@ -99,7 +99,7 @@ class AggregateController extends Controller
         }
     }
 
-    public function increment_unique_news_categories_clicks(Request $request)
+    public function incrementUniqueNewsCategoriesClicks(Request $request)
     {
         $ipAddress = $request->ip();
         $existingLog = ClickLog::where('ip_address', $ipAddress)->first();
@@ -118,7 +118,7 @@ class AggregateController extends Controller
         }
     }
     
-    public function increment_unique_most_read_clicks_clicks(Request $request)
+    public function incrementUniqueMostReadClicks(Request $request)
     {
         $ipAddress = $request->ip();
         $existingLog = ClickLog::where('ip_address', $ipAddress)->first();
@@ -138,7 +138,7 @@ class AggregateController extends Controller
     }
 
 
-    public function increment_unique_footer_clicks(Request $request)
+    public function incrementUniqueFooterClicks(Request $request)
     {
         $ipAddress = $request->ip();
         $existingLog = ClickLog::where('ip_address', $ipAddress)->first();

@@ -26,16 +26,16 @@ Route::controller(AuthController::class)->group(function () {
 Route::post('/count_visits', [CountVisitController::class, 'countCategoryClick']);
 
 Route::controller(AggregateController::class)->group(function () {
-    Route::get('increment_nav_clicks', 'increment_Nav');
-    Route::get('increment_hero_clicks', 'increment_hero');
-    Route::get('increment_news_clicks', 'increment_News');
-    Route::get('increment_most_read_clicks', 'increment_Most_read');
-    Route::get('increment_footer_clicks', 'increment_Footer');
-    Route::get('unique_navigation', 'increment_unique_nav_clicks');
-    Route::get('unique_hero', 'increment_unique_hero_clicks');
-    Route::get('unique_news', 'increment_unique_news_clicks');
-    Route::get('unique_most_read', 'increment_unique_most_read_clicks');
-    Route::get('unique_footer' , 'increment_unique_footer_clicks');
+    Route::get('increment_nav_clicks', 'incrementNav');
+    Route::get('increment_hero_clicks', 'incrementHero');
+    Route::get('increment_news_clicks', 'incrementNews');
+    Route::get('increment_most_read_clicks', 'incrementMostRead');
+    Route::get('increment_footer_clicks', 'incrementFooter');
+    Route::get('unique_navigation', 'incrementUniqueNavClicks');
+    Route::get('unique_hero', 'incrementUniqueHeroClicks');
+    Route::get('unique_news', 'incrementUniqueNewsClicks');
+    Route::get('unique_most_read', 'incrementUniqueMostReadClicks');
+    Route::get('unique_footer' , 'incrementUniqueFooterClicks');
     Route::get('top_news_categories', 'getTopNewsCategories');
     Route::get('clicks/{period}', 'getClicksByPeriod');
 });
