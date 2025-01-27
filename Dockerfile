@@ -16,13 +16,16 @@ WORKDIR /var/www/html
 # Copy Laravel files
 COPY . .
 
+# Ensure .env file exists
+RUN cp .env.example .env  # This step copies .env.example to .env during the build process
+
+# Set permissions for storage and cache
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-
-# Set up Laravel
+# Generate the app key
 RUN php artisan key:generate
 
 # Expose the application port
